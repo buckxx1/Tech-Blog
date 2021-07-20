@@ -10,7 +10,7 @@ const sequelize = require("./config/connection");
 
 const session = require("express-session");
 
-const { Sequelize } = require("sequelize/types");
+// const { Sequelize } = require("sequelize/types");
 
 const sequelizeStore = require("connect-session-sequelize")(session.Store)
 
@@ -20,7 +20,7 @@ const sesh = {
     cookie: {},
     resave: false,
     saveUinitialized: true,
-    store: new SequelizeStore ({
+    store: new sequelizeStore ({
         db: sequelize,
     }),
 };
